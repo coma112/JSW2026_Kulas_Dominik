@@ -1,0 +1,333 @@
+:root {
+    --kek: rgb(3 114 197);
+    --sotetKek: rgb(0 61 138);
+    --barna: rgb(94 60 38);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--kek);
+    color: var(--sotetKek);
+}
+
+.site-header {
+    height: 400px;
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgb(from var(--barna) r g b / 0.8),
+            rgb(from black r g b / 0.6)
+        ),
+        url('../images/banner.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.site-header h1 {
+    font-family: 'Rubik Distressed', cursive;
+    font-weight: normal;
+    font-size: 2rem;
+    color: white;
+    border-left: 5px solid white;
+    border-bottom:  3px solid white;
+    padding: 0.5rem 1rem;
+}
+
+.main-container {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 20px var(--sotetKek);
+    padding: 2rem 1rem;
+}
+
+.intro-section {
+    margin-bottom: 2rem;
+}
+
+.intro-section p {
+    line-height: 1.7;
+}
+
+.categories-section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-family: 'Rubik Distressed', cursive;
+    font-weight: normal;
+    font-variant: small-caps;
+    color: var(--sotetKek);
+    margin-bottom: 1rem;
+}
+
+.categories-section h2,
+.calculator-section h2 {
+    counter-reset: none;
+}
+
+body {
+    counter-reset: alcim-szamlalo;
+}
+
+.product-section h2::before {
+    counter-increment: alcim-szamlalo;
+    content: counter(alcim-szamlalo) ". ";
+}
+
+.category-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-tag {
+    display: inline-block;
+    background-color: rgb(from var(--sotetKek) r g b / 0.1);
+    color: var(--sotetKek);
+    font-weight: bold;
+    border-radius: 999px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    user-select: none;
+}
+
+.category-tag:hover {
+    cursor: pointer;
+}
+
+.category-tag.active {
+    background-color: var(--sotetKek);
+    color: white;
+}
+
+.product-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-intro {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card {
+    border: 2px solid var(--sotetKek);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 5s ease, box-shadow 5s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgb(from var(--sotetKek) r g b / 0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h3 {
+    font-family: 'Rubik Distressed', cursive;
+    font-weight: normal;
+    color: var(--sotetKek);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.card-body p {
+    font-family: Arial, sans-serif;
+    color: var(--sotetKek);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.calculator-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgb(from var(--sotetKek) r g b / 0.2);
+}
+
+.calculator-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+#calculatorForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.form-group label {
+    font-family: Arial, sans-serif;
+    color: var(--sotetKek);
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    border: 2px solid var(--sotetKek);
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: var(--sotetKek);
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--kek);
+    box-shadow: 0 0 0 3px rgb(from var(--kek) r g b / 0.2);
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.85rem;
+    min-height: 1rem;
+    display: block;
+}
+
+.btn-calculate {
+    padding: 0.7rem 2rem;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--sotetKek);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
+
+.btn-calculate:hover {
+    background-color: rgb(from var(--sotetKek) r g b / 0.9);
+}
+
+.dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0 0 0 / 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog-overlay.hidden {
+    display: none;
+}
+
+.dialog-box {
+    background-color: white;
+    border: 3px solid var(--sotetKek);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    max-width: 480px;
+    width: 90%;
+    color: var(--sotetKek);
+}
+
+.dialog-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.dialog-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--sotetKek);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s;
+}
+
+.dialog-close:hover {
+    background-color: rgb(from var(--sotetKek) r g b / 0.9);
+}
+
+.dialog-content {
+    font-family: Arial, sans-serif;
+    color: var(--sotetKek);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.site-footer {
+    background-color: var(--sotetKek);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-family: Arial, sans-serif;
+}
+
+@media (min-width: 750px) {
+    .site-header h1 {
+        font-size: 3rem;
+    }
+
+    .main-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .category-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: space-evenly;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
