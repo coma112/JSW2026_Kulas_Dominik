@@ -82,7 +82,6 @@ form.addEventListener('submit', (e) => {
 
     const terfogat = hossz * szeless * magass;
     const liter = (terfogat / 1000).toFixed(2);
-    const dm3 = (terfogat / 1000).toFixed(2);
 
     dialogContent.innerHTML = `
         <p><strong>Doboz méretei:</strong></p>
